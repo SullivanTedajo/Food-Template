@@ -1,0 +1,93 @@
+@forward '../globals';
+@forward '../util';
+
+.header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .8em 0;
+    margin-bottom: 2.5em;
+    background-color: var(--white-color);
+
+    &__brand{
+        @extend %header-font;
+        margin-bottom: 0;
+    }
+
+    &__mail{
+        @extend %header-font;
+
+    }
+
+    &__icon{
+        @extend %header-font;
+
+    }
+
+    &__hamburger{
+        margin: 0;
+    }
+
+    &__menu{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        display: none;
+        background-color: var(--white-color);
+        padding: 0;
+        margin: 0;
+        width: min(50%,40em);
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        
+    }
+
+    &__items{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+   
+
+    &__label{
+        @extend %menu-item;
+        cursor: pointer;
+    }
+
+    &__close{
+        // appearance: none;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        &:checked{
+            background-color: yellow;
+            color: pink;
+        }
+       
+
+    }
+
+    &__input{
+        appearance: none;
+    }
+
+    &__link{
+       @extend %menu-item;
+
+    }
+
+}
+
+@media only screen and (min-width: 23em) {
+    .header{
+        background-color: red;
+        margin: 0;
+        padding-inline: 1em;
+    }
+ }
+
